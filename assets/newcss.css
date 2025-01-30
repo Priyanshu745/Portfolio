@@ -540,20 +540,25 @@ img {
 }
 
 /*==================== Qualifications ====================*/
-
+/*==================== Qualifications ====================*/
 .qualification__tabs {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: var(--mb-2);
+  gap: 2rem;
 }
 
 .qualification__button {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .qualification__button:hover {
+  background-color: var(--first-color-light);
   color: var(--first-color);
 }
 
@@ -566,6 +571,7 @@ img {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   column-gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .qualification__title {
@@ -576,6 +582,8 @@ img {
 .qualification__subtitle {
   display: inline-block;
   font-size: var(--small-font-size);
+  margin-top: 0.5rem;
+  color: var(--text-color);
 }
 
 .qualification__calender {
@@ -604,11 +612,48 @@ img {
 }
 
 .qualification__active[data-content] {
-  display: none;
+  display: block;
 }
 
 .qualification__button.qualification__active {
   color: var(--first-color);
+  background-color: var(--first-color-light);
+}
+
+/* New hover effect for qualifications */
+.qualification__data:hover {
+  background-color: var(--background-hover);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+/* Ensure M.Tech has the same alignment as 12th */
+.qualification__data.mtech {
+  justify-self: center; /* Align M.Tech the same as 12th */
+}
+
+/* Responsive layout adjustments */
+@media screen and (max-width: 768px) {
+  .qualification__tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .qualification__data {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .qualification__rounder {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .qualification__line {
+    transform: translate(0, 0);
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 /*================= Services ==================*/
